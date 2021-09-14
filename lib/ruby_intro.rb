@@ -75,16 +75,12 @@ end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
-  if s=="0"  # return true if s is zero
+  return true if s=="0"
+  return false if not /^[10]+$/i === s
+  if s[-1]=='0' and s[-2]=='0'
     return true
-  end
-  if s.length <= 2   # if input is single or double return false
-    return false
-  end
-  if s.match(/^[01]*(00)$/) and not (s[0]=="0" and s[1]=="0")   # check if input is a binary number and multiple of 4(ends with 00) and check if binary number doesn't start with two zeros as 00 and 000 and 000... are invalid inputs
-  		return true
   else
- 		return false
+    return false
   end
 end
 
