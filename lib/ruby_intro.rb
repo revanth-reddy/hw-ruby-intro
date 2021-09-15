@@ -75,13 +75,10 @@ end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
-  return true if s=="0"
-  return false if not /^[10]+$/i === s
-  if s[-1]=='0' and s[-2]=='0'
-    return true
-  else
-    return false
-  end
+  return false if s.length==0
+  return false if not s !~ /[^01]/
+  number = s.to_i(2)
+  return true if number % 4 == 0
 end
 
 # Part 3
